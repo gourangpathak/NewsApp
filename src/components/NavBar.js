@@ -48,7 +48,7 @@ export class NavBar extends Component {
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/science">
-                    science
+                    Science
                   </Link>
                 </li>
                 <li className="nav-item">
