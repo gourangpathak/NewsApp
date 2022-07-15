@@ -7,13 +7,16 @@ import LoadingBar from "react-top-loading-bar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 export default class App extends Component {
+  // Set the pagesize and API_KEY
   pageSize = 6;
   apiKey = process.env.REACT_APP_NEWS_API;
   
+  // define state
   state = {
     progress : 0
   }
 
+  // a function to handle top loading progress bar
   setProgress = (progress) =>
   {
     this.setState({progress : progress})
@@ -22,6 +25,7 @@ export default class App extends Component {
   render() {
     return (
       <>
+        {/* Wrap Everything inside React Router & define the routes */}
         <BrowserRouter>
           <NavBar />
           <LoadingBar color="#f11946" progress={this.state.progress} />

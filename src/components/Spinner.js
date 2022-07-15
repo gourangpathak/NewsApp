@@ -6,6 +6,7 @@ export class Spinner extends Component {
   render() {
     return (
       <div className='text-center'>
+        {/* Spinner Component */}
         <img src={spinner} alt="Loading ..." />
       </div>
     )

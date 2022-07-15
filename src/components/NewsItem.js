@@ -2,12 +2,14 @@ import React, { Component } from "react";
 
 export class NewsItem extends Component {
   render() {
+    // Accept all props and destructure them from the News Component
     let { title, description, imageUrl, newsUrl, author, date, source } = this.props;
 
     return (
       <>
         <div className="my-3">
           <div className="card">
+            {/* Default Image in case of missing images */}
             <img
               src={
                 !imageUrl
@@ -28,7 +30,7 @@ export class NewsItem extends Component {
               <p className="card-text">{description}...</p>
               <p className="card-text">
                 <small className="text-muted">
-                  By {author ? author : "Unknown"} on{" "}
+                  By {author ? author : "Unknown"} on {" "}
                   {new Date(date).toGMTString()}
                 </small>
               </p>
