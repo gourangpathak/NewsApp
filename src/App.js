@@ -1,5 +1,4 @@
 import "./App.css";
-
 import React, { useState } from "react";
 import NavBar from "./components/NavBar";
 import News from "./components/News";
@@ -13,17 +12,30 @@ const App = () => {
 
   // define state
   const [progress, setProgress] = useState(0);
+  const [mode, setMode] = useState("light"); 
 
   // a function to handle top loading progress bar
   const updateProgress = (progress) => {
     setProgress(progress);
   };
 
+  const toggleMode = () => {
+    if (mode === "light") {
+      setMode("dark");
+      document.body.style.backgroundColor = "#212522";
+      document.body.style.color = "white";
+    } else {
+      setMode("light");
+      document.body.style.backgroundColor = "white";
+      document.body.style.color = "black";
+    }
+  };
+
   return (
     <>
       {/* Wrap Everything inside React Router & define the routes */}
       <BrowserRouter>
-        <NavBar />
+        <NavBar toggleMode={toggleMode} mode={mode}/>
         <LoadingBar color="#f11946" progress={progress} />
         <Routes>
           <Route
@@ -37,6 +49,7 @@ const App = () => {
                 key="general"
                 country={"in"}
                 category="general"
+                mode={mode}
               />
             }
           ></Route>
@@ -51,6 +64,7 @@ const App = () => {
                 key="general"
                 country={"in"}
                 category="general"
+                mode={mode}
               />
             }
           ></Route>
@@ -65,6 +79,7 @@ const App = () => {
                 key="business"
                 country={"in"}
                 category="business"
+                mode={mode}
               />
             }
           ></Route>
@@ -79,6 +94,7 @@ const App = () => {
                 key="entertainment"
                 country={"in"}
                 category="entertainment"
+                mode={mode}
               />
             }
           ></Route>
@@ -93,6 +109,7 @@ const App = () => {
                 key="science"
                 country={"in"}
                 category="science"
+                mode={mode}
               />
             }
           ></Route>
@@ -107,6 +124,7 @@ const App = () => {
                 key="sports"
                 country={"in"}
                 category="sports"
+                mode={mode}
               />
             }
           ></Route>
@@ -121,6 +139,7 @@ const App = () => {
                 key="health"
                 country={"in"}
                 category="health"
+                mode={mode}
               />
             }
           ></Route>
@@ -135,6 +154,7 @@ const App = () => {
                 key="technology"
                 country={"in"}
                 category="technology"
+                mode={mode}
               />
             }
           ></Route>

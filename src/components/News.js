@@ -21,10 +21,7 @@ const News = (props) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
-  document.title = `${capitalizeFirstLetter(
-    props.category
-  )} - NewsToday`;
-
+  
   // This Method will update my News by fetching articles from the NEWSAPI
   // This is async since we are doing a fetch operation in here
   const updateNews = async (pageNo) => {
@@ -59,34 +56,22 @@ const News = (props) => {
     props.setProgress(100);
   };
 
-  // This is a method to handle back button click
-  const handleBackClick = async () => {
-    // On click of this button reduce the page value
-    // and update the News
-    setPage(page - 1);
-    updateNews();
-  };
-
-  // This is a method to handle next button click
-  const handleNextClick = async () => {
-    // On click of this button increase the page value
-    // and update the News
-    setPage(page + 1);
-    updateNews();
-  };
-
   // This Method will run after the News Component has been rendered this has the same functionality as componentDidMount
   useEffect(() => {
+    document.title = `${capitalizeFirstLetter(
+      props.category
+    )} - NewsToday`;
+
     updateNews();
   }, []);
 
   // This Method is here for fetching More Articles for my infinite scroll behaviour
   const fetchMoreData = async () => {
+    
+    // fetch data from API
+    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page+1}&pagesize=${props.pageSize}`;
     // increment the page value to get new articles
     setPage(page + 1);
-
-    // fetch data from API
-    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pagesize=${props.pageSize}`;
     let data = await fetch(url);
     let parsedData = await data.json();
 
@@ -101,7 +86,7 @@ const News = (props) => {
   return (
     <>
       {/* The Top Headline on all page it changes according to the category */}
-      <h1 className="text-center">
+      <h1 className="text-center" style={{"margin-top" :"66px", "margin-bottom" : "10px"}}>
         NewsToday - Top {capitalizeFirstLetter(props.category)} Headlines
       </h1>
       {/* {this.state.loading && <Spinner />} */}
@@ -127,6 +112,7 @@ const News = (props) => {
                     author={element.author}
                     date={element.publishedAt}
                     source={element.source.name}
+                    mode={props.mode}
                   />
                 </div>
               );
