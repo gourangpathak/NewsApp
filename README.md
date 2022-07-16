@@ -3,8 +3,8 @@
 <img src="images/intro.gif" alt="drawing" width="1300"/>
 
 ## This App Supports Both Dark and Light Mode
-<img src="images/2022-07-16%20(1).png" alt="drawing" width="440"/>
-<img src="images/2022-07-16%20(6).png" alt="drawing" width="440"/>
+<img src="images/2022-07-16%20(1).png" alt="drawing" width="1300"/>
+<img src="images/2022-07-16%20(6).png" alt="drawing" width="1300"/>
 
 ## The App will bring you NEWS from different Categories like Business, Health, Sports, Science, Technology and Entertainment 
 
