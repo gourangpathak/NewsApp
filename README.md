@@ -3,7 +3,10 @@
 
 
 
-https://user-images.githubusercontent.com/89131980/190411988-5909cc3c-5394-4a6c-9012-fc924d0becb5.mp4
+https://user-images.githubusercontent.com/89131980/190416478-7758f648-3120-4629-84d5-0349362599fc.mp4
+
+
+
 
 
 ## This App Supports Both Dark and Light Mode
