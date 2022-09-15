@@ -1,6 +1,10 @@
 # NewsToday App made using NEWS API
 
-<img src="images/demo.gif" alt="drawing" width="1300"/>
+
+
+
+https://user-images.githubusercontent.com/89131980/190411988-5909cc3c-5394-4a6c-9012-fc924d0becb5.mp4
+
 
 ## This App Supports Both Dark and Light Mode
 <img src="images/2022-07-16%20(1).png" alt="drawing" width="1300"/>
